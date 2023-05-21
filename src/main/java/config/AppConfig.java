@@ -22,22 +22,17 @@ public class AppConfig {
     public Bus getBusBean() {
         return new Bus("BUS");
     }
-
     @Bean(name = "driverCar")
-    @Qualifier("Car")
-    public Driver getDriverCar() {
-        return new Driver("Вася");
+    public Driver getDriverCarBean() {
+        return new Driver("Вася", getCarBean());
     }
-
     @Bean(name = "driverBus")
-    @Qualifier("Bus")
-    public Driver getDriverBus() {
-        return new Driver("Вася");
+    public Driver getDriverBusBean() {
+        return new Driver("Петя", getBusBean());
     }
 
     @Bean(name = "driverPickup")
-    @Qualifier("Pickup")
-    public Driver getDriverPickup() {
-        return new Driver("Вася");
+    public Driver getDriverPickupBean() {
+        return new Driver("Игорь", getPickupBean());
     }
 }

@@ -1,20 +1,17 @@
 package driver;
 
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.Setter;
 import transport.Transport;
 @Getter
+@Setter
 public class Driver {
     private String name;
-
     private Transport transport;
 
-    public Driver(String name) {
+
+    public Driver(String name, Transport transport) {
         this.name = name;
-    }
-    @Autowired
-    public void setTransport(Transport transport) {
         this.transport = transport;
     }
 
